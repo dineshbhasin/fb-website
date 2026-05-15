@@ -295,7 +295,11 @@
                         <div class="contact-main__form fade-top" style="background: #0d0d0d; border: 1px solid #1e1e1e; border-radius: 12px; padding: 48px 40px;">
                            <h3>Tell Us About Your Brand</h3>
                            <p style="color: #888; margin-bottom: 32px; font-size: 15px;">Fill in the form and we'll get back to you within 24 hours.</p>
-                           <form action="#" method="post" class="section__content-cta">
+                           <form id="contactForm" action="https://api.web3forms.com/submit" method="post" class="section__content-cta">
+                              <input type="hidden" name="access_key" value="ad79f153-b506-4ff0-9665-e0eaf037b347">
+                              <input type="hidden" name="subject" value="New Enquiry — FrontBenchers Website">
+                              <input type="hidden" name="from_name" value="FrontBenchers Website">
+                              <input type="checkbox" name="botcheck" style="display:none">
 
                               <div class="group-wrapper">
                                  <div class="group-input">
@@ -340,10 +344,11 @@
                                  <textarea name="contact-message" id="contactMessage" placeholder="Tell us about your brand, goals, or any specific campaign ideas you have in mind..."></textarea>
                               </div>
 
-                              <div class="form-cta justify-content-start">
-                                 <button type="submit" class="btn btn--primary" style="padding: 16px 40px; font-size: 15px;">
+                              <div class="form-cta justify-content-start" style="flex-direction: column; align-items: flex-start; gap: 16px;">
+                                 <button type="submit" id="contactSubmitBtn" class="btn btn--primary" style="padding: 16px 40px; font-size: 15px;">
                                     Send Message &nbsp;<i class="fa-solid fa-arrow-right"></i>
                                  </button>
+                                 <p id="contactFormMsg" style="display:none; font-size: 14px; margin: 0;"></p>
                               </div>
 
                            </form>
@@ -429,11 +434,16 @@
                         <div class="footer__single-content">
                            <p>Join our newsletter for wellness marketing insights, creator stories, and campaign ideas delivered to your inbox.</p>
                            <div class="footer__single-form">
-                              <form action="#" method="post">
+                              <form id="newsletterFormContact" action="https://api.web3forms.com/submit" method="post">
+                                 <input type="hidden" name="access_key" value="ad79f153-b506-4ff0-9665-e0eaf037b347">
+                                 <input type="hidden" name="subject" value="Newsletter Subscription — FrontBenchers">
+                                 <input type="hidden" name="from_name" value="FrontBenchers Newsletter">
+                                 <input type="checkbox" name="botcheck" style="display:none">
                                  <div class="input-email">
-                                    <input type="email" name="newsletter-email" placeholder="Enter Your Email">
+                                    <input type="email" name="newsletter-email" placeholder="Enter Your Email" required>
                                     <button type="submit" aria-label="subscribe"><i class="fa-regular fa-paper-plane"></i></button>
                                  </div>
+                                 <p id="newsletterMsgContact" style="display:none; font-size: 13px; margin-top: 8px;"></p>
                               </form>
                            </div>
                         </div>
@@ -488,6 +498,74 @@
    <script src="assets/vendor/vanilla-tilt/tilt.jquery.js"></script>
    <script src="assets/js/plugins.js"></script>
    <script src="assets/js/main.js"></script>
+   <script>
+      // ── Contact Form ──────────────────────────────────────────────
+      document.getElementById('contactForm').addEventListener('submit', async function (e) {
+         e.preventDefault();
+         const btn = document.getElementById('contactSubmitBtn');
+         const msg = document.getElementById('contactFormMsg');
+         const originalLabel = btn.innerHTML;
+
+         btn.disabled = true;
+         btn.innerHTML = 'Sending… <i class="fa-solid fa-spinner fa-spin"></i>';
+         msg.style.display = 'none';
+
+         try {
+            const res = await fetch('https://api.web3forms.com/submit', {
+               method: 'POST',
+               headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+               body: JSON.stringify(Object.fromEntries(new FormData(this)))
+            });
+            const data = await res.json();
+            if (data.success) {
+               msg.textContent = '✅ Message sent! We\'ll get back to you within 24 hours.';
+               msg.style.color = '#4caf50';
+               this.reset();
+            } else {
+               throw new Error(data.message || 'Submission failed');
+            }
+         } catch (err) {
+            msg.textContent = '❌ Something went wrong. Please email us at collabs@frontbenchersmarketing.com';
+            msg.style.color = '#f44336';
+         } finally {
+            msg.style.display = 'block';
+            btn.disabled = false;
+            btn.innerHTML = originalLabel;
+         }
+      });
+
+      // ── Footer Newsletter (contact page) ─────────────────────────
+      document.getElementById('newsletterFormContact').addEventListener('submit', async function (e) {
+         e.preventDefault();
+         const btn = this.querySelector('[type="submit"]');
+         const msg = document.getElementById('newsletterMsgContact');
+
+         btn.disabled = true;
+         msg.style.display = 'none';
+
+         try {
+            const res = await fetch('https://api.web3forms.com/submit', {
+               method: 'POST',
+               headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+               body: JSON.stringify(Object.fromEntries(new FormData(this)))
+            });
+            const data = await res.json();
+            if (data.success) {
+               msg.textContent = '✅ You\'re subscribed!';
+               msg.style.color = '#4caf50';
+               this.reset();
+            } else {
+               throw new Error(data.message || 'Subscription failed');
+            }
+         } catch (err) {
+            msg.textContent = '❌ Try again or email us directly.';
+            msg.style.color = '#f44336';
+         } finally {
+            msg.style.display = 'block';
+            btn.disabled = false;
+         }
+      });
+   </script>
 </body>
 
 </html>
