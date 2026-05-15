@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+   <title>FrontBenchers — India's Wellness Influencer Marketing Agency</title>
+   <meta name="keywords" content="wellness influencer marketing, health creators, influencer agency India, wellness brands">
+   <meta name="description" content="FrontBenchers is India's leading wellness influencer marketing agency. We connect wellness brands with top health creators to build communities that convert.">
+   <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+   <link rel="stylesheet" href="assets/vendor/glyyphter/css/xpovio.css">
+   <link rel="stylesheet" href="assets/vendor/font-awesome/css/all.css">
+   <link rel="stylesheet" href="assets/vendor/nice-select/css/nice-select.css">
+   <link rel="stylesheet" href="assets/vendor/magnific-popup/css/magnific-popup.css">
+   <link rel="stylesheet" href="assets/vendor/slick/css/slick.css">
+   <link rel="stylesheet" href="assets/css/main.min.css">
+   <style>
+      /* ===== FrontBenchers Brand Overrides ===== */
+      .btn--primary,
+      .btn--primary:hover { background: #f57c28 !important; border-color: #f57c28 !important; }
+      .sub-title, .sub-title i, a.sub-title { color: #f57c28 !important; }
+      .skill-bar { background: #f57c28 !important; }
+      .portfolio__single-active .portfolio__single-content { background: #f57c28 !important; }
+      .progress-wrap svg path { stroke: #f57c28 !important; }
+
+      /* ===== Campaign card meta ===== */
+      .campaign-meta { font-size: 12px; color: #aaa; margin-top: 4px; display: block; }
+
+      /* ===== Stats Strip ===== */
+      .fb-stats-strip { background: #0e0e0e; padding: 80px 0; border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; }
+      .fb-stat-num { font-size: 52px; font-weight: 800; color: #f57c28; margin-bottom: 6px; display: block; line-height: 1; }
+      .fb-stat-lbl { color: #888; font-size: 13px; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 500; }
+
+      /* ===== Brand scrolling logos ===== */
+      .brand-text-logo {
+         font-size: 15px; font-weight: 700; letter-spacing: 2px;
+         color: #555; text-transform: uppercase; white-space: nowrap;
+         padding: 0 24px; transition: color 0.3s;
+      }
+      .brand-text-logo:hover { color: #f57c28; }
+
+      /* ===== Portfolio image sizing ===== */
+      .portfolio__single img,
+      .portfolio__single-active img {
+         width: 100%; height: 380px; object-fit: cover;
+      }
+
+      /* ===== Agency images ===== */
+      .agency__thumb .thumb-one,
+      .agency__thumb .thumb-two {
+         width: 100%; height: auto; object-fit: cover; border-radius: 4px;
+      }
+
+      /* ===== Blog image sizing ===== */
+      .blog__single-thumb img { width: 100%; height: 280px; object-fit: cover; }
+
+      /* ===== Testimonial thumb ===== */
+      .testimonial-s__slider-single .thumb img { width: 100%; height: 360px; object-fit: cover; border-radius: 4px; }
+
+      /* ===== FrontBenchers text logo ===== */
+      .fb-logo { display: flex; align-items: center; gap: 0; text-decoration: none !important; line-height: 1; }
+      .fb-logo span.fb-logo-front { font-size: 18px; font-weight: 900; letter-spacing: -0.5px; color: #f57c28; font-family: 'Inter', sans-serif; }
+      .fb-logo span.fb-logo-benchers { font-size: 18px; font-weight: 900; letter-spacing: -0.5px; color: #fff; font-family: 'Inter', sans-serif; }
+
+      /* ===== Mobile hero headline ===== */
+      @media (max-width: 575px) {
+         .banner h1, .banner .title-anim { font-size: 13vw !important; line-height: 1.05 !important; }
+      }
+
+      /* ===== Footer contact — always stacked ===== */
+      .footer__single-meta { display: flex !important; flex-direction: column !important; gap: 10px !important; align-items: flex-start !important; }
+      .footer__single-meta a { display: block !important; white-space: normal !important; word-break: break-word !important; }
+   </style>
+</head>
+
+<body>
+<div class="my-app">
+
+   <div id="preloader"><div id="loader"></div></div>
+   <div class="mouseCursor cursor-outer"></div>
+   <div class="mouseCursor cursor-inner"><span>Drag</span></div>
+
+   <!-- ======= HEADER ======= -->
+   <header class="header">
+      <div class="primary-navbar secondary--navbar">
+         <div class="container">
+            <div class="row">
+               <div class="col-12">
+                  <nav class="navbar p-0">
+                     <div class="navbar__logo">
+                        <a href="index.html" aria-label="home" class="fb-logo">
+                           <span class="fb-logo-front">FRONT</span><span class="fb-logo-benchers">BENCHERS</span>
+                        </a>
+                     </div>
+                     <div class="navbar__options">
+                        <button class="open-offcanvas-nav d-flex" aria-label="toggle menu" title="open menu"></button>
+                     </div>
+                  </nav>
+               </div>
+            </div>
+         </div>
+      </div>
+   </header>
+
+   <!-- ======= OFFCANVAS NAV ======= -->
+   <div class="offcanvas-nav">
+      <div class="offcanvas-menu">
+         <nav class="offcanvas-menu__wrapper">
+            <div class="offcanvas-menu__header nav-fade">
+               <div class="logo">
+                  <a href="index.html" class="fb-logo">
+                     <span class="fb-logo-front">FRONT</span><span class="fb-logo-benchers">BENCHERS</span>
+                  </a>
+               </div>
+               <a href="javascript:void(0)" class="close-offcanvas-menu" aria-label="close menu">
+                  <i class="fa-light fa-xmark-large"></i>
+               </a>
+            </div>
+            <div class="offcanvas-menu__list">
+               <div class="navbar__menu">
+                  <ul>
+                     <li class="navbar__item nav-fade"><a href="index.html">Home</a></li>
+                     <li class="navbar__item nav-fade"><a href="about-us.html">About Us</a></li>
+                     <li class="navbar__item nav-fade"><a href="our-services.html">Services</a></li>
+                     <li class="navbar__item nav-fade"><a href="our-projects.html">Work</a></li>
+                     <li class="navbar__item nav-fade"><a href="blog.html">Blog</a></li>
+                     <li class="navbar__item nav-fade"><a href="contact-us.html">Contact</a></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="offcanvas-menu__options nav-fade">
+               <div class="offcanvas__mobile-options d-flex">
+                  <a href="contact-us.html" class="btn btn--secondary">Get in Touch</a>
+               </div>
+            </div>
+            <div class="offcanvas-menu__social social nav-fade">
+               <a href="https://www.linkedin.com/company/frontbenchers-marketing" target="_blank" aria-label="LinkedIn">
+                  <i class="fa-brands fa-linkedin-in"></i>
+               </a>
+               <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
+                  <i class="fa-brands fa-instagram"></i>
+               </a>
+            </div>
+         </nav>
+      </div>
+   </div>
+
+   <div id="smooth-wrapper">
+      <div id="smooth-content">
+         <main>
+
+            <!-- ======= BANNER ======= -->
+            <section class="banner">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-12">
+                        <div class="banner__content">
+                           <h1 class="text-uppercase text-start fw-9 mb-0 title-anim">
+                              Wellness Brands
+                              <span class="text-stroke">Don't Need</span>
+                              <span class="interval">
+                                 <i class="icon-arrow-top-right"></i>
+                                 Ads. They Need Believers.
+                              </span>
+                           </h1>
+                           <div class="banner__content-inner">
+                              <p>India's most connected wellness influencer agency — campaigns, communities, and creators that actually convert.</p>
+                              <div class="cta section__content-cta">
+                                 <div class="single">
+                                    <h5 class="fw-7">85+</h5>
+                                    <p class="fw-5">Brand Partners</p>
+                                 </div>
+                                 <div class="single">
+                                    <h5 class="fw-7">50+</h5>
+                                    <p class="fw-5">Wellness Creators</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!-- Hero image: woman doing yoga/wellness lifestyle -->
+               <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=900&h=1000&fit=crop&q=80&auto=format"
+                  alt="Wellness lifestyle" class="banner-one-thumb d-none d-sm-block g-ban-one"
+                  style="object-fit:cover;">
+               <img src="assets/images/star.png" alt="" class="star">
+               <div class="banner-left-text banner-social-text d-none d-md-flex">
+                  <a href="mailto:collabs@frontbenchersmarketing.com">collabs@frontbenchersmarketing.com</a>
+                  <a href="tel:+918287839029">+91 82878 39029</a>
+               </div>
+               <div class="banner-right-text banner-social-text d-none d-md-flex">
+                  <a href="https://www.linkedin.com/company/frontbenchers-marketing" target="_blank">LinkedIn</a>
+                  <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+               </div>
+               <div class="lines d-none d-lg-flex">
+                  <div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div>
+               </div>
+            </section>
+
+            <!-- ======= ABOUT / AGENCY ======= -->
+            <section class="section agency">
+               <div class="container">
+                  <div class="row gaper align-items-center">
+                     <div class="col-12 col-lg-6">
+                        <div class="agency__thumb">
+                           <!-- Wellness community / yoga group -->
+                           <img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=700&h=480&fit=crop&q=80&auto=format"
+                              alt="Wellness community" class="thumb-one fade-left">
+                           <!-- Content creator filming -->
+                           <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&h=320&fit=crop&q=80&auto=format"
+                              alt="Content creator" class="thumb-two fade-right">
+                        </div>
+                     </div>
+                     <div class="col-12 col-lg-6">
+                        <div class="agency__content section__content">
+                           <span class="sub-title">WHO WE ARE <i class="fa-solid fa-arrow-right"></i></span>
+                           <h2 class="title title-anim">We are a community,<br>not your average agency.</h2>
+                           <div class="paragraph">
+                              <p>We believe health and wellness should be an always-on conversation. At FrontBenchers, we build communities — not just campaigns. Every top wellness creator is part of our network, and every brand we work with becomes part of something bigger.</p>
+                           </div>
+                           <div class="skill-wrap">
+                              <div class="skill-bar-single">
+                                 <div class="skill-bar-title"><p class="primary-text">Influencer Strategy</p></div>
+                                 <div class="skill-bar-wrapper" data-percent="95%">
+                                    <div class="skill-bar"><div class="skill-bar-percent"><span class="percent-value"></span></div></div>
+                                 </div>
+                              </div>
+                              <div class="skill-bar-single">
+                                 <div class="skill-bar-title"><p class="primary-text">Creator Growth &amp; Management</p></div>
+                                 <div class="skill-bar-wrapper" data-percent="90%">
+                                    <div class="skill-bar"><div class="skill-bar-percent"><span class="percent-value"></span></div></div>
+                                 </div>
+                              </div>
+                              <div class="skill-bar-single">
+                                 <div class="skill-bar-title"><p class="primary-text">Campaign Execution</p></div>
+                                 <div class="skill-bar-wrapper" data-percent="92%">
+                                    <div class="skill-bar"><div class="skill-bar-percent"><span class="percent-value"></span></div></div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="section__content-cta">
+                              <a href="about-us.html" class="btn btn--primary">Our Story</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <img src="assets/images/star.png" alt="" class="star">
+               <img src="assets/images/agency/dot-large.png" alt="" class="dot-large">
+            </section>
+
+            <!-- ======= CAMPAIGNS / PORTFOLIO ======= -->
+            <section class="section portfolio pb-0 fade-wrapper position-relative">
+               <div class="portfolio__text-slider">
+                  <div class="portfolio__text-slider-single"><h2 class="h1"><a href="our-projects.html">our campaigns <i class="fa-sharp fa-solid fa-arrow-down-right"></i></a></h2></div>
+                  <div class="portfolio__text-slider-single"><h2 class="h1"><a href="our-projects.html">our campaigns <i class="fa-sharp fa-solid fa-arrow-down-right"></i></a></h2></div>
+                  <div class="portfolio__text-slider-single"><h2 class="h1"><a href="our-projects.html">our campaigns <i class="fa-sharp fa-solid fa-arrow-down-right"></i></a></h2></div>
+                  <div class="portfolio__text-slider-single"><h2 class="h1"><a href="our-projects.html">our campaigns <i class="fa-sharp fa-solid fa-arrow-down-right"></i></a></h2></div>
+                  <div class="portfolio__text-slider-single"><h2 class="h1"><a href="our-projects.html">our campaigns <i class="fa-sharp fa-solid fa-arrow-down-right"></i></a></h2></div>
+                  <div class="portfolio__text-slider-single"><h2 class="h1"><a href="our-projects.html">our campaigns <i class="fa-sharp fa-solid fa-arrow-down-right"></i></a></h2></div>
+                  <div class="portfolio__text-slider-single"><h2 class="h1"><a href="our-projects.html">our campaigns <i class="fa-sharp fa-solid fa-arrow-down-right"></i></a></h2></div>
+               </div>
+               <div class="container-fluid">
+                  <div class="row gaper">
+
+                     <!-- 1: Minimalist — skincare products flat lay -->
+                     <div class="col-12 col-sm-6 col-xl-3">
+                        <div class="portfolio__single portfolio__single-active topy-tilt fade-top">
+                           <a href="our-projects.html">
+                              <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=700&h=800&fit=crop&q=80&auto=format"
+                                 alt="Dr Siddhant x Minimalist skincare campaign">
+                           </a>
+                           <div class="portfolio__single-content">
+                              <a href="our-projects.html"><i class="fa-sharp fa-solid fa-arrow-up-right"></i></a>
+                              <h4><a href="our-projects.html">Dr Siddhant × Minimalist</a></h4>
+                              <span class="campaign-meta">Skincare · 240K Reach</span>
+                           </div>
+                        </div>
+                     </div>
+
+                     <!-- 2: Terra Origin — protein nutrition -->
+                     <div class="col-12 col-sm-6 col-xl-3">
+                        <div class="portfolio__single topy-tilt fade-top">
+                           <a href="our-projects.html">
+                              <img src="https://images.unsplash.com/photo-1593095948071-474c5cc2989d?w=700&h=800&fit=crop&q=80&auto=format"
+                                 alt="Dr Manan x Terra Origin nutrition campaign">
+                           </a>
+                           <div class="portfolio__single-content">
+                              <a href="our-projects.html"><i class="fa-sharp fa-solid fa-arrow-up-right"></i></a>
+                              <h4><a href="our-projects.html">Dr Manan × Terra Origin</a></h4>
+                              <span class="campaign-meta">Nutrition · 58K Reach</span>
+                           </div>
+                        </div>
+                     </div>
+
+                     <!-- 3: Chemist At Play — skincare science -->
+                     <div class="col-12 col-sm-6 col-xl-3">
+                        <div class="portfolio__single topy-tilt fade-top">
+                           <a href="our-projects.html">
+                              <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=700&h=800&fit=crop&q=80&auto=format"
+                                 alt="Sid and Agni x Chemist At Play">
+                           </a>
+                           <div class="portfolio__single-content">
+                              <a href="our-projects.html"><i class="fa-sharp fa-solid fa-arrow-up-right"></i></a>
+                              <h4><a href="our-projects.html">Sid &amp; Agni × Chemist At Play</a></h4>
+                              <span class="campaign-meta">Skincare · 220K Reach</span>
+                           </div>
+                        </div>
+                     </div>
+
+                     <!-- 4: Samsung — smartwatch wearable -->
+                     <div class="col-12 col-sm-6 col-xl-3">
+                        <div class="portfolio__single topy-tilt fade-top">
+                           <a href="our-projects.html">
+                              <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=700&h=800&fit=crop&q=80&auto=format"
+                                 alt="Dr Siddhant x Samsung Galaxy Watch">
+                           </a>
+                           <div class="portfolio__single-content">
+                              <a href="our-projects.html"><i class="fa-sharp fa-solid fa-arrow-up-right"></i></a>
+                              <h4><a href="our-projects.html">Dr Siddhant × Samsung</a></h4>
+                              <span class="campaign-meta">Wearables · 104K Reach</span>
+                           </div>
+                        </div>
+                     </div>
+
+                     <!-- 5: Food Strong — healthy eating / nutrition -->
+                     <div class="col-12 col-sm-6 col-xl-3">
+                        <div class="portfolio__single topy-tilt fade-top">
+                           <a href="our-projects.html">
+                              <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=700&h=800&fit=crop&q=80&auto=format"
+                                 alt="Dr Manan x Food Strong">
+                           </a>
+                           <div class="portfolio__single-content">
+                              <a href="our-projects.html"><i class="fa-sharp fa-solid fa-arrow-up-right"></i></a>
+                              <h4><a href="our-projects.html">Dr Manan × Food Strong</a></h4>
+                              <span class="campaign-meta">Nutrition · 69.7K Reach</span>
+                           </div>
+                        </div>
+                     </div>
+
+                     <!-- 6: Dot & Key — skincare routine -->
+                     <div class="col-12 col-sm-6 col-xl-3">
+                        <div class="portfolio__single topy-tilt fade-top">
+                           <a href="our-projects.html">
+                              <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=700&h=800&fit=crop&q=80&auto=format"
+                                 alt="Dr Agni x Dot and Key">
+                           </a>
+                           <div class="portfolio__single-content">
+                              <a href="our-projects.html"><i class="fa-sharp fa-solid fa-arrow-up-right"></i></a>
+                              <h4><a href="our-projects.html">Dr Agni × Dot &amp; Key</a></h4>
+                              <span class="campaign-meta">Skincare · 115K Reach</span>
+                           </div>
+                        </div>
+                     </div>
+
+                     <!-- View All CTA card -->
+                     <div class="col-12 col-sm-6 col-xl-3">
+                        <div class="portfolio__single-alt-wrapper fade-top">
+                           <div class="portfolio__single-alt topy-tilt">
+                              <h4><a href="our-projects.html">view all work</a></h4>
+                              <a href="our-projects.html" class="arr"><i class="fa-sharp fa-solid fa-arrow-up-right"></i></a>
+                              <img src="assets/images/portfolio/dot.png" alt="" class="dot-one">
+                              <img src="assets/images/portfolio/dot.png" alt="" class="dot-two">
+                           </div>
+                        </div>
+                     </div>
+
+                     <!-- 7: Cross-collab 2.5M views — social media / reels -->
+                     <div class="col-12 col-sm-6 col-xl-3">
+                        <div class="portfolio__single topy-tilt fade-top">
+                           <a href="our-projects.html">
+                              <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=700&h=800&fit=crop&q=80&auto=format"
+                                 alt="Dr Sid x Maulika Sharma cross collab 2.5M views">
+                           </a>
+                           <div class="portfolio__single-content">
+                              <a href="our-projects.html"><i class="fa-sharp fa-solid fa-arrow-up-right"></i></a>
+                              <h4><a href="our-projects.html">Dr Sid × Maulika Sharma</a></h4>
+                              <span class="campaign-meta">Cross-Collab · 2.5M Views</span>
+                           </div>
+                        </div>
+                     </div>
+
+                  </div>
+               </div>
+               <div class="lines d-none d-lg-flex">
+                  <div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div>
+               </div>
+            </section>
+
+            <!-- ======= SERVICES / OFFER ======= -->
+            <section class="section offer fade-wrapper light">
+               <div class="container">
+                  <div class="row gaper">
+                     <div class="col-12 col-lg-5">
+                        <div class="offer__content section__content">
+                           <span class="sub-title">WHAT WE DO <i class="fa-solid fa-arrow-right"></i></span>
+                           <h2 class="title title-anim">How We Help Wellness Brands Win</h2>
+                           <div class="paragraph">
+                              <p>From finding the right creator to executing campaigns that feel authentic — we handle everything. No middle-men, faster turnarounds, and the best access to India's top wellness voices.</p>
+                           </div>
+                           <div class="section__content-cta">
+                              <a href="our-services.html" class="btn btn--secondary">view all services</a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-12 col-lg-7 col-xl-6 offset-xl-1">
+                        <div class="offer__cta">
+                           <!-- Each hover shows a relevant services image -->
+                           <div class="offer__cta-single fade-top">
+                              <span class="sub-title">01 <i class="fa-solid fa-arrow-right"></i></span>
+                              <h2><a href="our-services.html">Influencer Campaigns <i class="fa-sharp fa-solid fa-arrow-up-right"></i></a></h2>
+                              <div class="offer-thumb-hover d-none d-md-block"
+                                 style="background-image:url('https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&h=400&fit=crop&q=80&auto=format');background-size:cover;background-position:center;"></div>
+                           </div>
+                           <div class="offer__cta-single fade-top">
+                              <span class="sub-title">02 <i class="fa-solid fa-arrow-right"></i></span>
+                              <h2><a href="our-services.html">Creator Discovery <i class="fa-sharp fa-solid fa-arrow-up-right"></i></a></h2>
+                              <div class="offer-thumb-hover d-none d-md-block"
+                                 style="background-image:url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&h=400&fit=crop&q=80&auto=format');background-size:cover;background-position:center;"></div>
+                           </div>
+                           <div class="offer__cta-single fade-top">
+                              <span class="sub-title">03 <i class="fa-solid fa-arrow-right"></i></span>
+                              <h2><a href="our-services.html">Community Building <i class="fa-sharp fa-solid fa-arrow-up-right"></i></a></h2>
+                              <div class="offer-thumb-hover d-none d-md-block"
+                                 style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop&q=80&auto=format');background-size:cover;background-position:center;"></div>
+                           </div>
+                           <div class="offer__cta-single fade-top">
+                              <span class="sub-title">04 <i class="fa-solid fa-arrow-right"></i></span>
+                              <h2><a href="our-services.html">Brand Consulting <i class="fa-sharp fa-solid fa-arrow-up-right"></i></a></h2>
+                              <div class="offer-thumb-hover d-none d-md-block"
+                                 style="background-image:url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=400&fit=crop&q=80&auto=format');background-size:cover;background-position:center;"></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <img src="assets/images/offer/star.png" alt="" class="star">
+               <div class="lines d-none d-lg-flex">
+                  <div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div>
+               </div>
+            </section>
+
+            <!-- ======= STATS STRIP ======= -->
+            <div class="fb-stats-strip">
+               <div class="container">
+                  <div class="row justify-content-center text-center gaper">
+                     <div class="col-6 col-md-3">
+                        <span class="fb-stat-num">50+</span>
+                        <span class="fb-stat-lbl">Wellness Creators</span>
+                     </div>
+                     <div class="col-6 col-md-3">
+                        <span class="fb-stat-num">85+</span>
+                        <span class="fb-stat-lbl">Brand Partners</span>
+                     </div>
+                     <div class="col-6 col-md-3">
+                        <span class="fb-stat-num">&#8377;7.5Cr</span>
+                        <span class="fb-stat-lbl">Revenue Generated</span>
+                     </div>
+                     <div class="col-6 col-md-3">
+                        <span class="fb-stat-num">2.5M+</span>
+                        <span class="fb-stat-lbl">Views on Top Collab</span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <!-- ======= TESTIMONIALS ======= -->
+            <section class="section testimonial pt-0 position-relative">
+               <div class="testimonial__text-slider">
+                  <div class="testimonial__text-slider-single"><h2 class="h1"><a href="contact-us.html">what brands say <i class="fa-sharp fa-solid fa-arrow-down-right"></i></a></h2></div>
+                  <div class="testimonial__text-slider-single"><h2 class="h1"><a href="contact-us.html">what brands say <i class="fa-sharp fa-solid fa-arrow-down-right"></i></a></h2></div>
+                  <div class="testimonial__text-slider-single"><h2 class="h1"><a href="contact-us.html">what brands say <i class="fa-sharp fa-solid fa-arrow-down-right"></i></a></h2></div>
+                  <div class="testimonial__text-slider-single"><h2 class="h1"><a href="contact-us.html">what brands say <i class="fa-sharp fa-solid fa-arrow-down-right"></i></a></h2></div>
+                  <div class="testimonial__text-slider-single"><h2 class="h1"><a href="contact-us.html">what brands say <i class="fa-sharp fa-solid fa-arrow-down-right"></i></a></h2></div>
+               </div>
+               <div class="container position-relative">
+                  <div class="row">
+                     <div class="col-12 col-xxl-10">
+                        <div class="testimonial-s__slider">
+
+                           <!-- Testimonial 1 — female marketing executive -->
+                           <div class="testimonial-s__slider-single">
+                              <div class="row gaper align-items-center">
+                                 <div class="col-12 col-lg-4 col-xxl-4">
+                                    <div class="thumb">
+                                       <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&h=600&fit=crop&q=80&auto=format"
+                                          alt="Brand partner testimonial">
+                                       <svg xmlns="http://www.w3.org/2000/svg" width="44" height="322" viewBox="0 0 44 322" fill="none" class="d-none d-lg-block">
+                                          <path d="M43 -0.000976562V151.999L2 192.999H43V321.999" stroke="#414141"/>
+                                       </svg>
+                                    </div>
+                                 </div>
+                                 <div class="col-12 col-lg-7 offset-lg-1 col-xxl-7 offset-xxl-1">
+                                    <div class="testimonial-s__content">
+                                       <div class="quote"><i class="fa-solid fa-quote-right"></i></div>
+                                       <div class="content">
+                                          <h4>FrontBenchers didn't just deliver a campaign — they found us creators who genuinely believed in our products. The authenticity showed, and so did the results.</h4>
+                                       </div>
+                                       <div class="content-cta">
+                                          <h5>Marketing Head</h5>
+                                          <p>Wellness Brand Partner</p>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <!-- Testimonial 2 — male brand director -->
+                           <div class="testimonial-s__slider-single">
+                              <div class="row gaper align-items-center">
+                                 <div class="col-12 col-lg-4 col-xxl-4">
+                                    <div class="thumb">
+                                       <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop&q=80&auto=format"
+                                          alt="Brand director testimonial">
+                                       <svg xmlns="http://www.w3.org/2000/svg" width="44" height="322" viewBox="0 0 44 322" fill="none" class="d-none d-lg-block">
+                                          <path d="M43 -0.000976562V151.999L2 192.999H43V321.999" stroke="#414141"/>
+                                       </svg>
+                                    </div>
+                                 </div>
+                                 <div class="col-12 col-lg-7 offset-lg-1 col-xxl-7 offset-xxl-1">
+                                    <div class="testimonial-s__content">
+                                       <div class="quote"><i class="fa-solid fa-quote-right"></i></div>
+                                       <div class="content">
+                                          <h4>Direct access to India's top health creators — no middlemen, no delays. FrontBenchers made our campaign feel native, not sponsored. That's rare.</h4>
+                                       </div>
+                                       <div class="content-cta">
+                                          <h5>Brand Director</h5>
+                                          <p>Nutrition Brand Partner</p>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <!-- Testimonial 3 — female founder -->
+                           <div class="testimonial-s__slider-single">
+                              <div class="row gaper align-items-center">
+                                 <div class="col-12 col-lg-4 col-xxl-4">
+                                    <div class="thumb">
+                                       <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&h=600&fit=crop&q=80&auto=format"
+                                          alt="Founder testimonial">
+                                       <svg xmlns="http://www.w3.org/2000/svg" width="44" height="322" viewBox="0 0 44 322" fill="none" class="d-none d-lg-block">
+                                          <path d="M43 -0.000976562V151.999L2 192.999H43V321.999" stroke="#414141"/>
+                                       </svg>
+                                    </div>
+                                 </div>
+                                 <div class="col-12 col-lg-7 offset-lg-1 col-xxl-7 offset-xxl-1">
+                                    <div class="testimonial-s__content">
+                                       <div class="quote"><i class="fa-solid fa-quote-right"></i></div>
+                                       <div class="content">
+                                          <h4>The cross-creator collab FrontBenchers put together was unlike anything we'd tried. Over 1 million views and a surge in product enquiries — we were blown away.</h4>
+                                       </div>
+                                       <div class="content-cta">
+                                          <h5>Founder</h5>
+                                          <p>Skincare Brand Partner</p>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                        </div>
+                     </div>
+                  </div>
+                  <div class="slide-group justify-content-start">
+                     <a href="javascript:void(0)" aria-label="previous" class="slide-btn prev-testimonial-three"><i class="fa-light fa-angle-left"></i></a>
+                     <a href="javascript:void(0)" aria-label="next" class="slide-btn next-testimonial-three"><i class="fa-light fa-angle-right"></i></a>
+                  </div>
+               </div>
+               <div class="other-section">
+                  <img class="other-section-image"
+                     src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&h=600&fit=crop&q=80&auto=format"
+                     alt="">
+               </div>
+               <div class="lines d-none d-lg-flex">
+                  <div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div>
+               </div>
+            </section>
+
+            <!-- ======= BLOG TEASER ======= -->
+            <section class="section blog fade-wrapper">
+               <div class="container">
+                  <div class="row justify-content-center">
+                     <div class="col-12 col-lg-8">
+                        <div class="section__header text-center">
+                           <span class="sub-title">INSIGHTS &amp; PERSPECTIVES <i class="fa-solid fa-arrow-right"></i></span>
+                           <h2 class="title title-anim">From the Wellness Marketing Front Line</h2>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row gaper">
+                     <!-- Blog 1 — fitness / running / micro-influencer -->
+                     <div class="col-12 col-md-6">
+                        <div class="blog__single fade-top">
+                           <div class="blog__single-thumb topy-tilt">
+                              <a href="blog-single.html">
+                                 <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800&h=520&fit=crop&q=80&auto=format"
+                                    alt="Why micro-influencers are winning in Indian wellness marketing">
+                              </a>
+                           </div>
+                           <div class="blog__single-content">
+                              <h4><a href="blog-single.html">Why Micro-Influencers Are Winning in Indian Wellness Marketing</a></h4>
+                              <div class="blog__single-meta">
+                                 <a href="blog.html" class="sub-title">Strategy <i class="fa-solid fa-arrow-right"></i></a>
+                                 <p>May 2025</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- Blog 2 — creator / social media growth -->
+                     <div class="col-12 col-md-6">
+                        <div class="blog__single fade-top">
+                           <div class="blog__single-thumb topy-tilt">
+                              <a href="blog-single.html">
+                                 <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&h=520&fit=crop&q=80&auto=format"
+                                    alt="How we grew a creator from 15K to 440K followers">
+                              </a>
+                           </div>
+                           <div class="blog__single-content">
+                              <h4><a href="blog-single.html">How We Grew a Creator from 15K to 440K Followers in 2 Years</a></h4>
+                              <div class="blog__single-meta">
+                                 <a href="blog.html" class="sub-title">Creator Growth <i class="fa-solid fa-arrow-right"></i></a>
+                                 <p>April 2025</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+
+            <!-- ======= BRANDS SCROLLING STRIP ======= -->
+            <div class="sponsor section pb-0">
+               <div class="container-fluid">
+                  <div class="row justify-content-center">
+                     <div class="col-12">
+                        <div class="sponsor__slider">
+                           <div class="sponsor__slider-item"><span class="brand-text-logo">Minimalist</span></div>
+                           <div class="sponsor__slider-item"><span class="brand-text-logo">Terra Origin</span></div>
+                           <div class="sponsor__slider-item"><span class="brand-text-logo">Chemist At Play</span></div>
+                           <div class="sponsor__slider-item"><span class="brand-text-logo">Dot &amp; Key</span></div>
+                           <div class="sponsor__slider-item"><span class="brand-text-logo">Food Strong</span></div>
+                           <div class="sponsor__slider-item"><span class="brand-text-logo">Samsung</span></div>
+                           <div class="sponsor__slider-item"><span class="brand-text-logo">Minimalist</span></div>
+                           <div class="sponsor__slider-item"><span class="brand-text-logo">Terra Origin</span></div>
+                           <div class="sponsor__slider-item"><span class="brand-text-logo">Chemist At Play</span></div>
+                           <div class="sponsor__slider-item"><span class="brand-text-logo">Dot &amp; Key</span></div>
+                           <div class="sponsor__slider-item"><span class="brand-text-logo">Food Strong</span></div>
+                           <div class="sponsor__slider-item"><span class="brand-text-logo">Samsung</span></div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="lines d-none d-lg-flex">
+                     <div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div>
+                  </div>
+               </div>
+            </div>
+
+            <!-- ======= NEXT PAGE TEASER ======= -->
+            <section class="section next-page">
+               <div class="container">
+                  <div class="row justify-content-center">
+                     <div class="col-12 col-lg-8">
+                        <div class="section__header text-center">
+                           <a href="about-us.html" class="sub-title mb-0">Next Page <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="next__text-slider">
+                  <div class="next__text-slider-single"><h2 class="h1"><a href="about-us.html">About Us <i class="fa-sharp fa-solid fa-arrow-down-right"></i></a></h2></div>
+                  <div class="next__text-slider-single"><h2 class="h1"><a href="about-us.html">About Us <i class="fa-sharp fa-solid fa-arrow-down-right"></i></a></h2></div>
+                  <div class="next__text-slider-single"><h2 class="h1"><a href="about-us.html">About Us <i class="fa-sharp fa-solid fa-arrow-down-right"></i></a></h2></div>
+                  <div class="next__text-slider-single"><h2 class="h1"><a href="about-us.html">About Us <i class="fa-sharp fa-solid fa-arrow-down-right"></i></a></h2></div>
+                  <div class="next__text-slider-single"><h2 class="h1"><a href="about-us.html">About Us <i class="fa-sharp fa-solid fa-arrow-down-right"></i></a></h2></div>
+                  <div class="next__text-slider-single"><h2 class="h1"><a href="about-us.html">About Us <i class="fa-sharp fa-solid fa-arrow-down-right"></i></a></h2></div>
+                  <div class="next__text-slider-single"><h2 class="h1"><a href="about-us.html">About Us <i class="fa-sharp fa-solid fa-arrow-down-right"></i></a></h2></div>
+               </div>
+               <div class="lines d-none d-lg-flex">
+                  <div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div>
+               </div>
+            </section>
+
+         </main>
+
+         <!-- ======= FOOTER ======= -->
+         <footer class="footer section pb-0" data-background="assets/images/footer/footer-bg.png">
+            <div class="container">
+               <div class="row gaper">
+                  <div class="col-12 col-lg-5 col-xl-6">
+                     <div class="footer__single">
+                        <a href="index.html" class="logo fb-logo"><span class="fb-logo-front">FRONT</span><span class="fb-logo-benchers">BENCHERS</span></a>
+                        <div class="footer__single-meta">
+                           <a href="mailto:collabs@frontbenchersmarketing.com">
+                              <i class="fa-sharp fa-solid fa-envelope"></i> collabs@frontbenchersmarketing.com
+                           </a>
+                           <a href="tel:+918287839029">
+                              <i class="fa-sharp fa-solid fa-phone-volume"></i> +91 82878 39029
+                           </a>
+                           <a href="https://www.linkedin.com/company/frontbenchers-marketing" target="_blank">
+                              <i class="fa-brands fa-linkedin-in"></i> LinkedIn
+                           </a>
+                        </div>
+                        <div class="footer__cta text-start">
+                           <a href="contact-us.html" class="btn btn--secondary">Get in Touch</a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-12 col-lg-2 col-xl-2">
+                     <div class="footer__single">
+                        <div class="footer__single-intro"><h5>Explore</h5></div>
+                        <div class="footer__single-content">
+                           <ul>
+                              <li><a href="about-us.html">About Us</a></li>
+                              <li><a href="our-services.html">Services</a></li>
+                              <li><a href="our-projects.html">Work</a></li>
+                              <li><a href="blog.html">Blog</a></li>
+                              <li><a href="contact-us.html">Contact</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-12 col-lg-5 col-xl-4">
+                     <div class="footer__single">
+                        <div class="footer__single-intro"><h5>Stay in the loop</h5></div>
+                        <div class="footer__single-content">
+                           <p>Join our newsletter for wellness marketing insights, creator stories, and campaign ideas delivered to your inbox.</p>
+                           <div class="footer__single-form">
+                              <form action="#" method="post">
+                                 <div class="input-email">
+                                    <input type="email" name="subscribe-news" id="subscribeNews" placeholder="Enter Your Email" required>
+                                    <button type="submit" class="subscribe"><i class="fa-sharp fa-solid fa-paper-plane"></i></button>
+                                 </div>
+                              </form>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-12">
+                     <div class="footer__copyright">
+                        <div class="row align-items-center gaper">
+                           <div class="col-12 col-lg-8">
+                              <div class="footer__copyright-text text-center text-lg-start">
+                                 <p>Copyright &copy; <span id="copyYear"></span> FrontBenchers Marketing. All Rights Reserved.</p>
+                              </div>
+                           </div>
+                           <div class="col-12 col-lg-4">
+                              <div class="social justify-content-center justify-content-lg-end">
+                                 <a href="https://www.linkedin.com/company/frontbenchers-marketing" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                                 <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </footer>
+
+      </div>
+   </div>
+
+   <button class="progress-wrap" aria-label="scroll indicator" title="go to top">
+      <span></span>
+      <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+         <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+      </svg>
+   </button>
+   <div class="line"><span></span><span></span><span></span><span></span><span></span></div>
+
+   <script src="assets/vendor/jquery/jquery-3.7.0.min.js"></script>
+   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <script src="assets/vendor/nice-select/js/jquery.nice-select.min.js"></script>
+   <script src="assets/vendor/magnific-popup/js/jquery.magnific-popup.min.js"></script>
+   <script src="assets/vendor/slick/js/slick.min.js"></script>
+   <script src="assets/vendor/images-loaded/imagesloaded.pkgd.min.js"></script>
+   <script src="assets/vendor/isotope/isotope.pkgd.min.js"></script>
+   <script src="assets/vendor/gsap/chroma.min.js"></script>
+   <script src="assets/vendor/gsap/SplitText.min.js"></script>
+   <script src="assets/vendor/gsap/ScrollSmoother.min.js"></script>
+   <script src="assets/vendor/gsap/ScrollToPlugin.min.js"></script>
+   <script src="assets/vendor/gsap/ScrollTrigger.min.js"></script>
+   <script src="assets/vendor/gsap/gsap.min.js"></script>
+   <script src="assets/vendor/vanilla-tilt/tilt.jquery.js"></script>
+   <script src="assets/js/plugins.js"></script>
+   <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+   <title>Contact — FrontBenchers Wellness Influencer Marketing Agency</title>
+   <meta name="keywords" content="contact frontbenchers, wellness influencer marketing agency contact, brand collaboration India">
+   <meta name="description" content="Ready to connect your brand with India's top wellness creators? Reach out to FrontBenchers — we respond fast and get campaigns moving.">
+   <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+   <link rel="stylesheet" href="assets/vendor/glyyphter/css/xpovio.css">
+   <link rel="stylesheet" href="assets/vendor/font-awesome/css/all.css">
+   <link rel="stylesheet" href="assets/vendor/nice-select/css/nice-select.css">
+   <link rel="stylesheet" href="assets/vendor/magnific-popup/css/magnific-popup.css">
+   <link rel="stylesheet" href="assets/vendor/slick/css/slick.css">
+   <link rel="stylesheet" href="assets/css/main.min.css">
+   <style>
+      /* ===== FrontBenchers Brand Overrides ===== */
+      .btn--primary,
+      .btn--primary:hover { background: #f57c28 !important; border-color: #f57c28 !important; }
+      .sub-title, .sub-title i, a.sub-title { color: #f57c28 !important; }
+      .progress-wrap svg path { stroke: #f57c28 !important; }
+
+      /* ===== FrontBenchers text logo ===== */
+      .fb-logo { display: flex; align-items: center; gap: 0; text-decoration: none !important; line-height: 1; }
+      .fb-logo span.fb-logo-front { font-size: 18px; font-weight: 900; letter-spacing: -0.5px; color: #f57c28; font-family: 'Inter', sans-serif; }
+      .fb-logo span.fb-logo-benchers { font-size: 18px; font-weight: 900; letter-spacing: -0.5px; color: #fff; font-family: 'Inter', sans-serif; }
+
+      /* ===== Contact info cards ===== */
+      .contact-m__single { padding: 36px 28px; border: 1px solid #1e1e1e; border-radius: 8px; height: 100%; transition: border-color 0.3s; }
+      .contact-m__single:hover { border-color: #f57c28; }
+      .contact-m__single .thumb { width: 56px; height: 56px; background: #f57c28; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+      .contact-m__single .thumb i { font-size: 22px; color: #fff; }
+      .contact-m__single h4 { font-size: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; color: #fff; }
+      .contact-m__single p, .contact-m__single a { color: #aaa; font-size: 15px; line-height: 1.7; display: block; transition: color 0.3s; }
+      .contact-m__single a:hover { color: #f57c28; }
+
+      /* ===== Contact form ===== */
+      .contact-main__form h3 { font-size: 28px; font-weight: 800; margin-bottom: 12px; }
+      .contact-main__form .group-input { margin-bottom: 16px; }
+      .contact-main__form .group-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+      @media (max-width: 575px) { .contact-main__form .group-wrapper { grid-template-columns: 1fr; } }
+      .contact-main__form input,
+      .contact-main__form textarea,
+      .contact-main__form select { width: 100%; background: #111; border: 1px solid #2a2a2a; color: #fff; padding: 14px 18px; border-radius: 6px; font-size: 15px; outline: none; transition: border-color 0.3s; }
+      .contact-main__form input:focus,
+      .contact-main__form textarea:focus { border-color: #f57c28; }
+      .contact-main__form textarea { height: 160px; resize: vertical; }
+      .contact-main__form select option { background: #111; color: #fff; }
+
+      /* ===== Banner ===== */
+      .cmn-banner { padding: 140px 0 80px; }
+      .cmn-banner h2 { font-size: clamp(40px, 5vw, 72px); font-weight: 900; margin-bottom: 16px; line-height: 1.1; }
+      .cmn-banner .breadcrumb { background: transparent; padding: 0; margin: 0; }
+      .cmn-banner .breadcrumb-item a { color: #f57c28; }
+      .cmn-banner .breadcrumb-item.active { color: #888; }
+      .cmn-banner .breadcrumb-item + .breadcrumb-item::before { color: #555; }
+      .cmn-banner .primary-text { color: #aaa; font-size: 17px; line-height: 1.8; }
+
+      /* ===== Social links ===== */
+      .contact-social-links { display: flex; gap: 12px; margin-top: 8px; flex-wrap: wrap; }
+      .contact-social-links a { color: #aaa; font-size: 15px; display: flex; align-items: center; gap: 6px; transition: color 0.3s; text-decoration: none; }
+      .contact-social-links a:hover { color: #f57c28; }
+
+      /* ===== Process steps ===== */
+      .process-step { display: flex; gap: 16px; align-items: flex-start; }
+      .process-step__num { width: 36px; height: 36px; background: #f57c28; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 13px; color: #fff; flex-shrink: 0; }
+      .process-step__title { color: #fff; font-weight: 700; margin-bottom: 4px; font-size: 15px; }
+      .process-step__desc { color: #888; font-size: 14px; line-height: 1.6; margin: 0; }
+
+      /* ===== Footer contact — always stacked ===== */
+      .footer__single-meta { display: flex !important; flex-direction: column !important; gap: 10px !important; align-items: flex-start !important; }
+      .footer__single-meta a { display: block !important; white-space: normal !important; word-break: break-word !important; }
+
+      /* ===== Brand marquee ===== */
+      @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+      .brand-marquee-track { display: flex; gap: 60px; white-space: nowrap; animation: marquee 22s linear infinite; }
+      .brand-marquee-label { font-size: 13px; font-weight: 700; letter-spacing: 3px; color: #333; text-transform: uppercase; }
+      .brand-marquee-dot { color: #f57c28; font-size: 18px; }
+   </style>
+</head>
+
+<body>
+<div class="my-app">
+
+   <div id="preloader"><div id="loader"></div></div>
+   <div class="mouseCursor cursor-outer"></div>
+   <div class="mouseCursor cursor-inner"><span>Drag</span></div>
+
+   <!-- ======= HEADER ======= -->
+   <header class="header">
+      <div class="primary-navbar secondary--navbar">
+         <div class="container">
+            <div class="row">
+               <div class="col-12">
+                  <nav class="navbar p-0">
+                     <div class="navbar__logo">
+                        <a href="index.html" aria-label="home" class="fb-logo">
+                           <span class="fb-logo-front">FRONT</span><span class="fb-logo-benchers">BENCHERS</span>
+                        </a>
+                     </div>
+                     <div class="navbar__options">
+                        <button class="open-offcanvas-nav d-flex" aria-label="toggle menu" title="open menu"></button>
+                     </div>
+                  </nav>
+               </div>
+            </div>
+         </div>
+      </div>
+   </header>
+
+   <!-- ======= OFFCANVAS NAV ======= -->
+   <div class="offcanvas-nav">
+      <div class="offcanvas-menu">
+         <nav class="offcanvas-menu__wrapper">
+            <div class="offcanvas-menu__header nav-fade">
+               <div class="logo">
+                  <a href="index.html" class="fb-logo">
+                     <span class="fb-logo-front">FRONT</span><span class="fb-logo-benchers">BENCHERS</span>
+                  </a>
+               </div>
+               <a href="javascript:void(0)" class="close-offcanvas-menu" aria-label="close menu">
+                  <i class="fa-light fa-xmark-large"></i>
+               </a>
+            </div>
+            <div class="offcanvas-menu__list">
+               <div class="navbar__menu">
+                  <ul>
+                     <li class="navbar__item nav-fade"><a href="index.html">Home</a></li>
+                     <li class="navbar__item nav-fade"><a href="about-us.html">About Us</a></li>
+                     <li class="navbar__item nav-fade"><a href="our-services.html">Services</a></li>
+                     <li class="navbar__item nav-fade"><a href="our-projects.html">Work</a></li>
+                     <li class="navbar__item nav-fade"><a href="blog.html">Blog</a></li>
+                     <li class="navbar__item nav-fade"><a href="contact-us.html">Contact</a></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="offcanvas-menu__options nav-fade">
+               <div class="offcanvas__mobile-options d-flex">
+                  <a href="contact-us.html" class="btn btn--secondary">Get in Touch</a>
+               </div>
+            </div>
+            <div class="offcanvas-menu__social social nav-fade">
+               <a href="https://www.linkedin.com/company/frontbenchers-marketing" target="_blank" aria-label="LinkedIn">
+                  <i class="fa-brands fa-linkedin-in"></i>
+               </a>
+               <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
+                  <i class="fa-brands fa-instagram"></i>
+               </a>
+            </div>
+         </nav>
+      </div>
+      <div class="offcanvas-nav__backdrop"></div>
+   </div>
+
+   <div id="smooth-wrapper">
+      <div id="smooth-content">
+         <main>
+
+            <!-- ======= PAGE BANNER ======= -->
+            <section class="cmn-banner" data-background="assets/images/banner/cmn-banner-bg.png">
+               <div class="container">
+                  <div class="row gaper align-items-center">
+                     <div class="col-12 col-lg-6">
+                        <p class="sub-title title-anim"><i class="fa-solid fa-circle-small"></i> Get In Touch</p>
+                        <h2 class="title title-anim">Let's Build<br>Something Real.</h2>
+                        <nav aria-label="breadcrumb">
+                           <ol class="breadcrumb">
+                              <li class="breadcrumb-item">
+                                 <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+                              </li>
+                              <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+                           </ol>
+                        </nav>
+                     </div>
+                     <div class="col-12 col-lg-6">
+                        <p class="primary-text">Whether you're a wellness brand looking to scale, or a creator ready to monetise — we want to hear from you. No decks, no long calls. Just a conversation that moves fast.</p>
+                     </div>
+                  </div>
+               </div>
+            </section>
+
+            <!-- ======= CONTACT INFO CARDS ======= -->
+            <section class="section contact-m fade-wrapper" style="padding-top: 60px; padding-bottom: 0;">
+               <div class="container">
+                  <div class="row gaper">
+
+                     <div class="col-12 col-sm-6 col-xl-3">
+                        <div class="contact-m__single fade-top">
+                           <div class="thumb"><i class="fa-solid fa-phone-volume"></i></div>
+                           <div class="content">
+                              <h4>Call Us</h4>
+                              <a href="tel:+918287839029">+91 82878 39029</a>
+                              <p style="font-size:13px; margin-top:8px; color: #666;">Mon – Sat, 10am – 7pm IST</p>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="col-12 col-sm-6 col-xl-3">
+                        <div class="contact-m__single fade-top">
+                           <div class="thumb"><i class="fa-solid fa-envelope"></i></div>
+                           <div class="content">
+                              <h4>Email Us</h4>
+                              <a href="mailto:collabs@frontbenchersmarketing.com" style="word-break: break-word;">collabs@frontbenchersmarketing.com</a>
+                              <p style="font-size:13px; margin-top:8px; color: #666;">We reply within 24 hours</p>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="col-12 col-sm-6 col-xl-3">
+                        <div class="contact-m__single fade-top">
+                           <div class="thumb"><i class="fa-brands fa-linkedin-in"></i></div>
+                           <div class="content">
+                              <h4>Find Us Online</h4>
+                              <div class="contact-social-links">
+                                 <a href="https://www.linkedin.com/company/frontbenchers-marketing" target="_blank">
+                                    <i class="fa-brands fa-linkedin-in"></i> LinkedIn
+                                 </a>
+                                 <a href="https://www.instagram.com/" target="_blank">
+                                    <i class="fa-brands fa-instagram"></i> Instagram
+                                 </a>
+                              </div>
+                              <p style="font-size:13px; margin-top:12px; color: #666;">DMs open. Always.</p>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="col-12 col-sm-6 col-xl-3">
+                        <div class="contact-m__single fade-top">
+                           <div class="thumb"><i class="fa-solid fa-handshake"></i></div>
+                           <div class="content">
+                              <h4>Who We Work With</h4>
+                              <p>Wellness &amp; health brands<br>Nutraceutical companies<br>Skincare &amp; beauty labels<br>Fitness &amp; lifestyle creators</p>
+                           </div>
+                        </div>
+                     </div>
+
+                  </div>
+
+                  <!-- ======= FORM + PROCESS ======= -->
+                  <div class="row gaper align-items-start" style="margin-top: 80px;">
+
+                     <!-- Left: Process -->
+                     <div class="col-12 col-lg-5">
+                        <div class="fade-top" style="padding-right: 20px;">
+                           <p class="sub-title"><i class="fa-solid fa-circle-small"></i> What Happens Next</p>
+                           <h3 style="font-size: clamp(28px, 3vw, 44px); font-weight: 900; line-height: 1.15; margin-bottom: 20px;">Drop us a line.<br>We'll take it<br>from there.</h3>
+                           <p style="color: #888; font-size: 16px; line-height: 1.8; margin-bottom: 36px;">We don't do 3-week proposals. Once you reach out, here's how it goes:</p>
+
+                           <div style="display: flex; flex-direction: column; gap: 28px;">
+                              <div class="process-step">
+                                 <div class="process-step__num">01</div>
+                                 <div>
+                                    <p class="process-step__title">We review your brief</p>
+                                    <p class="process-step__desc">Within 24 hours, our team reads your message and matches it to the right creators and strategy.</p>
+                                 </div>
+                              </div>
+                              <div class="process-step">
+                                 <div class="process-step__num">02</div>
+                                 <div>
+                                    <p class="process-step__title">Quick discovery call</p>
+                                    <p class="process-step__desc">30 minutes. We understand your goals, budget, and timeline. No jargon, no fluff.</p>
+                                 </div>
+                              </div>
+                              <div class="process-step">
+                                 <div class="process-step__num">03</div>
+                                 <div>
+                                    <p class="process-step__title">Campaign proposal</p>
+                                    <p class="process-step__desc">Curated creator recommendations, campaign structure, and projected results — within 48 hours.</p>
+                                 </div>
+                              </div>
+                           </div>
+
+                           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 52px; padding-top: 40px; border-top: 1px solid #1e1e1e;">
+                              <div>
+                                 <span style="font-size: 42px; font-weight: 900; color: #f57c28; display: block; line-height: 1; margin-bottom: 6px;">85+</span>
+                                 <span style="color: #888; font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px;">Brand Partners</span>
+                              </div>
+                              <div>
+                                 <span style="font-size: 42px; font-weight: 900; color: #f57c28; display: block; line-height: 1; margin-bottom: 6px;">50+</span>
+                                 <span style="color: #888; font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px;">Wellness Creators</span>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+
+                     <!-- Right: Form -->
+                     <div class="col-12 col-lg-7">
+                        <div class="contact-main__form fade-top" style="background: #0d0d0d; border: 1px solid #1e1e1e; border-radius: 12px; padding: 48px 40px;">
+                           <h3>Tell Us About Your Brand</h3>
+                           <p style="color: #888; margin-bottom: 32px; font-size: 15px;">Fill in the form and we'll get back to you within 24 hours.</p>
+                           <form action="#" method="post" class="section__content-cta">
+
+                              <div class="group-wrapper">
+                                 <div class="group-input">
+                                    <input type="text" name="contact-name" id="contactName" placeholder="Your Name *" required>
+                                 </div>
+                                 <div class="group-input">
+                                    <input type="email" name="contact-email" id="contactEmail" placeholder="Email Address *" required>
+                                 </div>
+                              </div>
+
+                              <div class="group-wrapper">
+                                 <div class="group-input">
+                                    <input type="text" name="brand-name" id="brandName" placeholder="Brand / Company Name">
+                                 </div>
+                                 <div class="group-input">
+                                    <input type="tel" name="phone" id="phoneNum" placeholder="Phone Number">
+                                 </div>
+                              </div>
+
+                              <div class="group-input">
+                                 <select name="inquiry-type" id="inquiryType">
+                                    <option value="">I'm a...</option>
+                                    <option value="brand">Wellness / Health Brand</option>
+                                    <option value="creator">Content Creator / Influencer</option>
+                                    <option value="startup">Health Startup</option>
+                                    <option value="other">Other</option>
+                                 </select>
+                              </div>
+
+                              <div class="group-input">
+                                 <select name="campaign-type" id="campaignType">
+                                    <option value="">What are you looking for?</option>
+                                    <option value="influencer-campaign">Influencer Campaign</option>
+                                    <option value="creator-discovery">Creator Discovery</option>
+                                    <option value="community-building">Community Building</option>
+                                    <option value="brand-consulting">Brand Consulting</option>
+                                    <option value="not-sure">Not sure yet — let's talk</option>
+                                 </select>
+                              </div>
+
+                              <div class="group-input">
+                                 <textarea name="contact-message" id="contactMessage" placeholder="Tell us about your brand, goals, or any specific campaign ideas you have in mind..."></textarea>
+                              </div>
+
+                              <div class="form-cta justify-content-start">
+                                 <button type="submit" class="btn btn--primary" style="padding: 16px 40px; font-size: 15px;">
+                                    Send Message &nbsp;<i class="fa-solid fa-arrow-right"></i>
+                                 </button>
+                              </div>
+
+                           </form>
+                        </div>
+                     </div>
+
+                  </div>
+               </div>
+            </section>
+
+            <!-- ======= BRAND LOGOS MARQUEE ======= -->
+            <div style="padding: 80px 0 0; overflow: hidden; border-top: 1px solid #1a1a1a; margin-top: 100px;">
+               <div class="brand-marquee-track">
+                  <span class="brand-marquee-label">Minimalist</span>
+                  <span class="brand-marquee-dot">✦</span>
+                  <span class="brand-marquee-label">Terra Origin</span>
+                  <span class="brand-marquee-dot">✦</span>
+                  <span class="brand-marquee-label">Chemist At Play</span>
+                  <span class="brand-marquee-dot">✦</span>
+                  <span class="brand-marquee-label">Dot &amp; Key</span>
+                  <span class="brand-marquee-dot">✦</span>
+                  <span class="brand-marquee-label">Food Strong</span>
+                  <span class="brand-marquee-dot">✦</span>
+                  <span class="brand-marquee-label">Samsung</span>
+                  <span class="brand-marquee-dot">✦</span>
+                  <span class="brand-marquee-label">Minimalist</span>
+                  <span class="brand-marquee-dot">✦</span>
+                  <span class="brand-marquee-label">Terra Origin</span>
+                  <span class="brand-marquee-dot">✦</span>
+                  <span class="brand-marquee-label">Chemist At Play</span>
+                  <span class="brand-marquee-dot">✦</span>
+                  <span class="brand-marquee-label">Dot &amp; Key</span>
+                  <span class="brand-marquee-dot">✦</span>
+                  <span class="brand-marquee-label">Food Strong</span>
+                  <span class="brand-marquee-dot">✦</span>
+                  <span class="brand-marquee-label">Samsung</span>
+                  <span class="brand-marquee-dot">✦</span>
+               </div>
+            </div>
+
+         </main>
+
+         <!-- ======= FOOTER ======= -->
+         <footer class="footer section pb-0" data-background="assets/images/footer/footer-bg.png">
+            <div class="container">
+               <div class="row gaper">
+                  <div class="col-12 col-lg-5 col-xl-6">
+                     <div class="footer__single">
+                        <a href="index.html" class="logo fb-logo"><span class="fb-logo-front">FRONT</span><span class="fb-logo-benchers">BENCHERS</span></a>
+                        <div class="footer__single-meta">
+                           <a href="mailto:collabs@frontbenchersmarketing.com">
+                              <i class="fa-sharp fa-solid fa-envelope"></i> collabs@frontbenchersmarketing.com
+                           </a>
+                           <a href="tel:+918287839029">
+                              <i class="fa-sharp fa-solid fa-phone-volume"></i> +91 82878 39029
+                           </a>
+                           <a href="https://www.linkedin.com/company/frontbenchers-marketing" target="_blank">
+                              <i class="fa-brands fa-linkedin-in"></i> LinkedIn
+                           </a>
+                        </div>
+                        <div class="footer__cta text-start">
+                           <a href="contact-us.html" class="btn btn--secondary">Get in Touch</a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-12 col-lg-2 col-xl-2">
+                     <div class="footer__single">
+                        <div class="footer__single-intro"><h5>Explore</h5></div>
+                        <div class="footer__single-content">
+                           <ul>
+                              <li><a href="about-us.html">About Us</a></li>
+                              <li><a href="our-services.html">Services</a></li>
+                              <li><a href="our-projects.html">Work</a></li>
+                              <li><a href="blog.html">Blog</a></li>
+                              <li><a href="contact-us.html">Contact</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-12 col-lg-5 col-xl-4">
+                     <div class="footer__single">
+                        <div class="footer__single-intro"><h5>Stay In The Loop</h5></div>
+                        <div class="footer__single-content">
+                           <p>Join our newsletter for wellness marketing insights, creator stories, and campaign ideas delivered to your inbox.</p>
+                           <div class="footer__single-form">
+                              <form action="#" method="post">
+                                 <div class="input-email">
+                                    <input type="email" name="newsletter-email" placeholder="Enter Your Email">
+                                    <button type="submit" aria-label="subscribe"><i class="fa-regular fa-paper-plane"></i></button>
+                                 </div>
+                              </form>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-12">
+                     <div class="footer__copyright">
+                        <div class="row align-items-center gaper">
+                           <div class="col-12 col-lg-8">
+                              <div class="footer__copyright-text text-center text-lg-start">
+                                 <p>Copyright &copy; <span id="copyYear"></span> FrontBenchers Marketing. All Rights Reserved.</p>
+                              </div>
+                           </div>
+                           <div class="col-12 col-lg-4">
+                              <div class="footer__copyright-social social justify-content-center justify-content-lg-end">
+                                 <a href="https://www.linkedin.com/company/frontbenchers-marketing" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                                 <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </footer>
+
+      </div>
+   </div>
+
+   <button class="progress-wrap" aria-label="scroll indicator" title="go to top">
+      <span></span>
+      <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+         <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+   </button>
+
+   <script src="assets/vendor/jquery/jquery-3.7.0.min.js"></script>
+   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <script src="assets/vendor/nice-select/js/jquery.nice-select.min.js"></script>
+   <script src="assets/vendor/magnific-popup/js/jquery.magnific-popup.min.js"></script>
+   <script src="assets/vendor/slick/js/slick.min.js"></script>
+   <script src="assets/vendor/images-loaded/imagesloaded.pkgd.min.js"></script>
+   <script src="assets/vendor/isotope/isotope.pkgd.min.js"></script>
+   <script src="assets/vendor/gsap/chroma.min.js"></script>
+   <script src="assets/vendor/gsap/SplitText.min.js"></script>
+   <script src="assets/vendor/gsap/ScrollSmoother.min.js"></script>
+   <script src="assets/vendor/gsap/ScrollToPlugin.min.js"></script>
+   <script src="assets/vendor/gsap/ScrollTrigger.min.js"></script>
+   <script src="assets/vendor/gsap/gsap.min.js"></script>
+   <script src="assets/vendor/vanilla-tilt/tilt.jquery.js"></script>
+   <script src="assets/js/plugins.js"></script>
+   <script src="assets/js/main.js"></script>
+</body>
+
+</html>
