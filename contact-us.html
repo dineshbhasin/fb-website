@@ -70,9 +70,13 @@
       .process-step__title { color: #fff; font-weight: 700; margin-bottom: 4px; font-size: 15px; }
       .process-step__desc { color: #888; font-size: 14px; line-height: 1.6; margin: 0; }
 
-      /* ===== Footer contact — always stacked ===== */
+      /* ===== Footer contact — single line ===== */
       .footer__single-meta { display: flex !important; flex-direction: column !important; gap: 10px !important; align-items: flex-start !important; }
-      .footer__single-meta a { display: block !important; white-space: normal !important; word-break: break-word !important; }
+      .footer__single-meta a { display: inline-flex !important; align-items: center !important; gap: 6px !important; white-space: nowrap !important; word-break: normal !important; font-size: 13px !important; }
+
+      /* ===== Fix hover text visibility on buttons ===== */
+      .btn--secondary:hover, .btn--tertiary:hover { color: var(--white) !important; }
+      .btn:hover { color: var(--white) !important; }
 
       /* ===== Brand marquee ===== */
       @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
